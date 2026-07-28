@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#050505"><title>Match Night</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Kanit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<audio id="bgMusic" loop preload="auto">
+  <source src="เพลงบอล.mp3" type="audio/mpeg">
+</audio>
+<button class="sound-toggle" id="soundToggle" aria-label="เปิดหรือปิดเสียง">
+  <span class="sound-bars"><i></i><i></i><i></i></span>
+  <b id="soundLabel">SOUND ON</b>
+</button>
+<canvas id="fx"></canvas><div class="noise"></div><div class="flash" id="flash"></div>
+<div class="page-transition" id="pageTransition" aria-hidden="true">
+  <div class="pt-panel pt-a"></div><div class="pt-panel pt-b"></div>
+  <div class="pt-line"></div>
+  <div class="pt-center"><img src="manutd-logo.svg" alt=""><span>UNITED</span></div>
+</div>
+<main>
+<section class="scene active mystery" id="s0">
+  <div class="scan"></div><div class="mystery-grid"></div>
+  <div class="topcode">PRIVATE ACCESS // 07 // MCR</div><div class="fan-badge">FAN-MADE • FOR A UNITED FAN</div>
+  <div class="first-crest first-crest-watermark"><img src="manutd-logo.svg" alt="Manchester United"></div>
+  <div class="mystery-copy"><small>INCOMING TRANSMISSION</small><h1>YOU'VE BEEN<br>SELECTED.</h1><p>มีบางอย่างกำลังรอคุณอยู่หลังอุโมงค์นี้</p>
+  <button class="hold" id="unlock"><i></i><b>HOLD TO UNLOCK</b><span>อย่าเพิ่งเดาว่าคืออะไร</span></button></div>
+</section>
+
+<section class="scene tunnel-scene" id="s1">
+  <div class="tunnel-rings"></div><div class="count" id="count">3</div>
+  <p>ENTERING THE THEATRE OF DREAMS</p>
+</section>
+
+<section class="scene reveal" id="s2">
+  <div class="spot a"></div><div class="spot b"></div>
+  <img class="big-crest subtle-crest" src="manutd-logo.svg" alt="Manchester United">
+  <div class="reveal-copy"><small>OLD TRAFFORD • SPECIAL FIXTURE</small><h2>TONIGHT<br>IS <em>YOUR</em><br>MATCH.</h2><p>ยังไม่ใช่เกมธรรมดา และคืนนี้มีผู้เล่นคนเดียวที่สำคัญที่สุด</p>
+  <button class="red next">WALK OUT →</button></div>
+</section>
+
+<section class="scene player" id="s3">
+  <div class="player-photo"><img src="photo1.jpg" alt=""></div><img class="crest-corner" src="manutd-logo.svg" alt="">
+  <div class="player-copy"><small>STARTING XI • NUMBER 07</small><h2 data-name>YOUR MVP</h2><div class="statline"><b>365</b><span>DAYS<br>PLAYED</span><b>∞</b><span>MEMORIES<br>MADE</span></div>
+  <p>แล้วก็ถึงเวลาเฉลยว่าแมตช์พิเศษนี้จัดขึ้นเพื่อใคร...</p><button class="red next">REVEAL THE OCCASION →</button></div>
+</section>
+
+<section class="scene birthday-reveal" id="s4">
+  <img class="reveal-crest" src="manutd-logo.svg" alt=""><div class="birthday-copy"><small>SURPRISE FIXTURE</small><h2>HAPPY<br><span>BIRTHDAY</span></h2><p data-name>YOUR MVP</p></div>
+  <div class="ribbon">ONE LOVE • ONE CLUB • ONE VERY SPECIAL DAY • 1878 • ONE LOVE • ONE CLUB •</div>
+  <button class="red next bottom">OPEN THE MEMORIES →</button>
+</section>
+
+<section class="scene memories" id="s5">
+ <img class="wm" src="manutd-logo.svg" alt=""><div class="mem-head"><small>04 MOMENTS • ONE STORY</small><h2>MATCHDAY<br>MEMORIES</h2>
+    <p class="mem-instruction">SCROLL DOWN • เปิดความทรงจำทีละรูป</p></div>
+ <div class="cards memory-rail" id="memoryRail">
+  <article class="pc p1"><span class="rail-no">01</span><img src="photo1.jpg"><div class="pc-copy"><b>FIRST HALF</b><span>จุดเริ่มต้นของเรื่องดี ๆ</span></div></article>
+  <article class="pc p2"><span class="rail-no">02</span><img src="photo2.jpg"><div class="pc-copy"><b>THE COMEBACK</b><span>วันที่ยังจำได้เสมอ</span></div></article>
+  <article class="pc p3"><span class="rail-no">03</span><img src="photo3.jpg"><div class="pc-copy"><b>HOME GAME</b><span>ที่ตรงนี้มีความหมาย</span></div></article>
+  <article class="pc p4"><span class="rail-no">04</span><img src="photo4.jpg"><div class="pc-copy"><b>STILL UNITED</b><span>และเรื่องยังไม่จบแค่นี้</span></div></article>
+ </div><button class="red next mem-next">NEXT CHAPTER →</button>
+</section>
+
+<section class="scene letter" id="s6">
+ <img class="letter-crest" src="manutd-logo.svg" alt=""><div class="letterbox"><small>A MESSAGE FROM YOUR TEAM</small><h2>TO OUR<br>NUMBER ONE.</h2><p>ขอให้ปีนี้เป็นอีกฤดูกาลที่แกได้ทำในสิ่งที่อยากทำ เจอคนดี ๆ มีวันที่หัวเราะเยอะกว่าวันเหนื่อย และไม่ว่าจะเจอเกมยากแค่ไหน ก็ขอให้รู้ว่ายังมีคนคอยเชียร์แกอยู่ข้างสนามเสมอ</p><i>— From someone on your team.</i></div>
+ <button class="red next bottom">THERE'S MORE →</button>
+</section>
+
+<section class="scene cake" id="s7">
+ <img class="cake-crest" src="manutd-logo.svg" alt=""><small>HALF-TIME TRADITION</small><h2>ONE WISH<br>BEFORE KICKOFF.</h2>
+ <div class="cake-art"><div class="candles"><i><b></b></i><i><b></b></i><i><b></b></i></div><div class="cake-top"></div><div class="cake-body"><span>07</span></div><div class="plate"></div></div>
+ <p>อธิษฐานไว้ในใจ แล้วกดค้างเพื่อเป่าเทียน</p><button class="blow" id="blow"><i></i><b>HOLD TO BLOW</b></button><div class="blowpct" id="blowpct">0%</div>
+</section>
+
+<section class="scene penalty" id="s8">
+ <img class="penalty-crest" src="manutd-logo.svg" alt=""><div class="ball-wrap" id="ball"><div class="target"></div><div class="football"><img src="football.svg"></div></div>
+ <small>PENALTY OF THE YEAR</small><h2>MAKE IT<br>COUNT.</h2><p>คำอธิษฐานพร้อมแล้ว ทีนี้ยิงมันไปให้สุด</p>
+ <button class="charge" id="charge"><i></i><b>HOLD • RELEASE TO SHOOT</b></button><div class="power"><span>POWER</span><b id="power">0%</b></div>
+</section>
+
+<section class="scene final" id="s9">
+ <div class="goal" id="goal">GOAL!</div><img class="final-crest" src="manutd-logo.svg" alt="">
+ <div class="final-copy"><small>FULL TIME • A NEW SEASON BEGINS</small><h2>HAPPY<br>BIRTHDAY!</h2><p data-name>YOUR MVP</p></div>
+ <p class="fan-note">A FAN-MADE BIRTHDAY EXPERIENCE FOR A MANCHESTER UNITED FAN • NOT AN OFFICIAL CLUB PRODUCT</p><div class="final-actions"><button class="red" id="makeStory">CREATE STORY CARD</button><button class="ghost" id="replay">↻ REPLAY</button></div>
+</section>
+
+<section class="scene story" id="s10">
+ <div class="storybar"><button class="ghost" id="back">← BACK</button><span>YOUR 9:16 STORY CARD</span></div>
+ <div class="storycard" id="storycard">
+  <div class="sc-top"><img src="manutd-logo.svg"><span>BIRTHDAY MATCHDAY</span></div>
+  <div class="sc-photo"><img src="photo1.jpg"></div><div class="sc-score"><span>PLAYER 07</span><b>HBD</b><span>FOREVER UNITED</span></div>
+  <div class="sc-name"><small>PLAYER OF THE DAY</small><strong data-name>YOUR MVP</strong><p>Another year. Another season. Still our number one.</p></div>
+  <div class="sc-foot"><span>FAN-MADE • #BirthdayUnited</span><span>made with tikki_card</span></div>
+ </div>
+ <button class="save" id="saveStory">SAVE STORY AS JPG</button><p class="save-note" id="saveNote">กดปุ่มนี้แล้วระบบจะสร้างไฟล์ JPG 1080 × 1920 ให้จริง</p>
+</section>
+</main>
+<script src="script.js"></script>
+</body></html>
